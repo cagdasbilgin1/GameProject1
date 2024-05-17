@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rebuildBtn: {fileID: 1595040636}
+  matchedCountUI: {fileID: 767719928}
 --- !u!114 &187388525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -617,7 +618,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 59.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1069,7 +1070,7 @@ MonoBehaviour:
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
-  m_FlexibleHeight: 0.6
+  m_FlexibleHeight: 0.55
   m_LayoutPriority: 1
 --- !u!1 &767719926
 GameObject:
@@ -1238,6 +1239,7 @@ MonoBehaviour:
   _board: {fileID: 1865516626}
   _cardsBackgroundColor: {r: 0.72075474, g: 0.97728544, b: 1, a: 1}
   _cardsMarkSignColor: {r: 0.52156866, g: 0.75686276, b: 1, a: 1}
+  _matchThreshold: 3
 --- !u!4 &829180342
 Transform:
   m_ObjectHideFlags: 0
@@ -1851,7 +1853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Match Count
+  m_text: Matched Count
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1878,7 +1880,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.5
+  m_fontSize: 51.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2478,7 +2480,7 @@ MonoBehaviour:
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
-  m_FlexibleHeight: 0.4
+  m_FlexibleHeight: 0.45
   m_LayoutPriority: 1
 --- !u!1 &1812970699
 GameObject:

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -9,28 +10,39 @@ public class CardItem : MonoBehaviour
     [SerializeField] CircleCollider2D _collider;
 
     Vector2Int _coordinate;
-    bool _marked;
+    bool _isMarked;
     const float _colliderRadiusOffsetFactor = .45f;
     const float _markSignSizeOffsetFactor = .8f;
 
+    public event Action<Vector2Int> OnCardClicked;
+
+    public Vector2Int Coordinate => _coordinate;
+    public bool IsMarked => _isMarked;
+
     void OnMouseDown()
     {
-        if (_marked) return;
+        if (_isMarked) return;
 
-        Debug.Log("clicked " + _coordinate.x + " : " + _coordinate.y);
         Mark();
+        OnCardClicked?.Invoke(_coordinate);
     }
 
     public void Mark()
     {
-        _marked = true;
+        _isMarked = true;
         _cardMarkSignSpriteRenderer.enabled = true;
+    }
+
+    public void UnMark()
+    {
+        _isMarked = false;
+        _cardMarkSignSpriteRenderer.enabled = false;
     }
 
     public void Init(Vector2Int coordinate, float cardSize, int gridSize, Color cardBackgroundColor, Color cardMarkSignColor, float totalWidthUnit, float totalHeightUnit)
     {
         _coordinate = coordinate;
-        _marked = false;
+        _isMarked = false;
 
         var halfGridSize = (float) gridSize / 2;
         var offsetX = (_coordinate.x - halfGridSize + 0.5f) * cardSize;
